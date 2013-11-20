@@ -5,11 +5,9 @@ class Song
   end
 
   def verses
-    result = []
-    @number_of_bottles.times do |num|
-      result << @verse_class.new(num + 1)
+    @number_of_bottles.downto(1).map do
+      |num| @verse_class.new(num)
     end
-    result.reverse
   end
 end
 
