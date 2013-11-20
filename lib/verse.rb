@@ -11,6 +11,8 @@ class Verse
     ].join("\n")
   end
 
+  private
+
   def bottles(number)
     if number == 1
       "1 bottle"
