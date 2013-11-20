@@ -26,22 +26,20 @@ end
 
 describe Song do
   class FakeVerse
-    attr_reader :number_of_bottles
     def initialize(number_of_bottles)
       @number_of_bottles = number_of_bottles
     end
+
+    def to_s
+      "verse-#{@number_of_bottles}"
+    end
   end
 
-  context "building verses" do
-    let(:verses) { Song.new(2, FakeVerse).verses }
+  context "singing the song" do
+    let(:song) { Song.new(2, FakeVerse) }
 
     it "builds a verse for each bottle of beer" do
-      expect(verses.size).to eq(2)
-    end
-
-    it "builds verses with descending numbers of bottles" do
-      expect(verses[0].number_of_bottles).to eq(2)
-      expect(verses[1].number_of_bottles).to eq(1)
+      expect(song.to_s).to eq "verse-2\n\nverse-1"
     end
   end
 end
