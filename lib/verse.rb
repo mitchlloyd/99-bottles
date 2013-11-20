@@ -3,7 +3,7 @@ class Verse
     @number_of_bottles = number_of_bottles
   end
 
-  def lyrics
+  def to_s
     [
       "#{bottles(@number_of_bottles)} of beer on the wall, #{bottles(@number_of_bottles)} of beer",
       "Take one down and pass it around",

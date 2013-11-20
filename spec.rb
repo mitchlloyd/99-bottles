@@ -9,7 +9,7 @@ describe Verse do
       "2 bottles of beer on the wall",
     ].join("\n")
     verse = Verse.new(3)
-    expect(verse.lyrics).to eq(expected_lyrics)
+    expect(verse.to_s).to eq(expected_lyrics)
   end
 
   it "correctly handles '1 bottle' of beer" do
@@ -19,7 +19,7 @@ describe Verse do
       "no more bottles of beer on the wall",
     ].join("\n")
     verse = Verse.new(1)
-    expect(verse.lyrics).to eq(expected_lyrics)
+    expect(verse.to_s).to eq(expected_lyrics)
   end
 end
 
