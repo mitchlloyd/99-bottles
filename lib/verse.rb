@@ -5,9 +5,19 @@ class Verse
 
   def lyrics
     [
-      "#{@number_of_bottles} bottles of beer on the wall, #{@number_of_bottles} bottles of beer",
+      "#{bottles(@number_of_bottles)} of beer on the wall, #{bottles(@number_of_bottles)} of beer",
       "Take one down and pass it around",
-      "#{@number_of_bottles - 1} bottles of beer on the wall",
+      "#{bottles(@number_of_bottles - 1)} of beer on the wall",
     ].join("\n")
+  end
+
+  def bottles(number)
+    if number == 1
+      "1 bottle"
+    elsif number == 0
+      "no more bottles"
+    else
+      "#{number} bottles"
+    end
   end
 end
